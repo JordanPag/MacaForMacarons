@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>Macarons!</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav id="sidebar">
+        <div id="dismiss">
+            Close
+        </div>
+        <div style="height: 70px;"></div>
+        <h3 style="padding-bottom: 26px;">My Cart</h3>
+        <div id="items"></div>
+        <div style="padding-top: 29px; padding-bottom: 30px; border-top: 1px solid #F5F5F5;">
+          <h3 style="font-size: 16px;">
+            Total
+            <span style="float: right;">$<span id="total"></span></span>
+          </h3>
+        </div>
+        <button type="button" class="btn btn-primary checkout-btn">Continue to Checkout</button>
+      </nav>
+      <nav id="sidebar2">
+        <div id="dismiss">
+            Close
+        </div>
+        <div style="height: 70px;"></div>
+        <div class="sidebar-header">
+            <h3>My Cart</h3>
+        </div>
+        <p>
+          <br>
+          You have nothing in your cart.
+        </p>
+      </nav>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><img src="assets/logo.png" id="logo"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <div class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item custom">
+                <a class="nav-link" href="#" style="color: #595959;">MENU</a>
+              </li>
+              <li class="nav-item custom">
+                <a class="nav-link" href="#" style="color: #595959;">BEVERAGES</a>
+              </li>
+              <li class="nav-item custom">
+                <a class="nav-link" href="#" style="color: #595959;">GIFTS</a>
+              </li>
+              <li id="line"></li>
+              <li class="nav-item">
+                <a id="sidebarCollapse" class="nav-link" href="#" style="padding-right: 0; color: #595959;">
+                  <span class="badge badge-primary hidden">1</span>
+                  <img src="assets/cart_icon.png" id="cart"/>
+                  <span>CART</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="overlay"></div>
+    <div class="content">
+      <h3>Menu</h3>
+      <div style="height: 20px;"></div>
+      <div class="box">
+        <table class="invisiTable">
+          <tr>
+            <td style="width: 220px; padding-right: 20px;">
+              <img src="assets/custom gift box.png"/>
+            </td>
+            <td style="max-width: 642px; padding-top: 1px;">
+              <h2 style="position: absolute; padding-top: 28px;">Assorted Flavors</h2>
+              <h1 style="margin-bottom: 35px;">Custom Gift Box</h1>
+              <p style="margin-bottom: 11px;">
+                This 16 piece gift box is perfect for birthdays, anniversaries or just for yourself!
+                Customize your flavors or pick from our three gift boxes!
+                <span class="hidden" id="more">
+                  <br><br>
+                  We offer pre-packed Citrus, Floral or Classic themed boxes.
+                  We offer next day delivery for free with all custom gift boxes!
+                </span>
+              </p>
+              <span id="readMore">Read More</span>
+            </td>
+            <td class="buyBox">
+              <h3 style="font-size: 20px; text-align: center;">$55/ea.</h3>
+              <div style="height: 27px;"></div>
+              <button class="btn btn-primary" style="height: 50px;" id="add1">
+                + Add to Cart
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="box">
+        <table class="invisiTable">
+          <tr>
+            <td style="width: 220px; padding-right: 20px;">
+              <img src="assets/vanilla.png"/>
+            </td>
+            <td style="max-width: 642px; padding-top: 1px;">
+              <h2 style="position: absolute; padding-top: 28px;">1 piece</h2>
+              <h1 style="margin-bottom: 35px;">Vanilla Earl Grey Macaron</h1>
+              <p style="margin-bottom: 11px;">
+                Our most popular flavor! Each macaron is filled with earl grey ganache.
+              </p>
+            </td>
+            <td class="buyBox">
+              <h3 style="font-size: 20px; text-align: center;">$3.75/ea.</h3>
+              <div style="height: 27px;"></div>
+              <button class="btn btn-primary" style="height: 50px;" id="add2">
+                + Add to Cart
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="box" id="last">
+        <table class="invisiTable">
+          <tr>
+            <td style="width: 220px; padding-right: 20px;">
+              <img src="assets/rose.png"/>
+            </td>
+            <td style="max-width: 642px; padding-top: 1px;">
+              <h2 style="position: absolute; padding-top: 28px;">1 piece</h2>
+              <h1 style="margin-bottom: 35px;">Rose Macarons</h1>
+              <p style="margin-bottom: 11px;">
+                Our most romantic flavor!
+                Filled with the lightest, sweetest rose ganache, this macaron will definitely be a pleasant surprise.
+              </p>
+            </td>
+            <td class="buyBox">
+              <h3 style="font-size: 20px; text-align: center;">$3.75/ea.</h3>
+              <div style="height: 27px;"></div>
+              <button class="btn btn-primary" style="height: 50px;" id="add3">
+                + Add to Cart
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="footer">
+      <table class="invisiTable">
+        <tr>
+          <td style="margin-right: 177px; padding-top: 21px; width: 378px;">
+            <h3 style="font-size: 16px; padding-bottom: 19px;">We are committed to serving the freshest, most delightful treats. </h3>
+            <img></img>
+          </td>
+          <td>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
