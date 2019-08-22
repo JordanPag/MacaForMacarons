@@ -8,6 +8,35 @@
   </head>
   <body>
     <div class="wrapper">
+      <nav id="nav-sidebar">
+        <div id="dismiss">
+            Close
+        </div>
+        <div style="height: 70px;"></div>
+          <div class="nav-item custom" style="float: left;">
+            <a class="nav-link" href="#" style="color: #595959;">MENU</a>
+          </div>
+          <br>
+          <br>
+          <div class="nav-item custom" style="float: left;">
+            <a class="nav-link" href="#" style="color: #595959;">BEVERAGES</a>
+          </div>
+          <br>
+          <br>
+          <div class="nav-item custom" style="float: left;">
+            <a class="nav-link" href="#" style="color: #595959;">GIFTS</a>
+          </div>
+          <br>
+          <br>
+          <div class="nav-item" style="float: left;">
+            <a class="sidebarCollapse nav-link" href="#" style="padding-right: 0; color: #595959;">
+              <span class="badge badge-primary hidden diff">1</span>
+              <img src="assets/cart_icon.png" id="cart"/>
+              <span>CART</span>
+            </a>
+          </div>
+        </ul>
+      </nav>
       <nav id="sidebar">
         <div id="dismiss">
             Close
@@ -28,9 +57,7 @@
             Close
         </div>
         <div style="height: 70px;"></div>
-        <div class="sidebar-header">
-            <h3>My Cart</h3>
-        </div>
+        <h3>My Cart</h3>
         <p>
           <br>
           You have nothing in your cart.
@@ -38,7 +65,7 @@
       </nav>
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#"><img src="assets/logo.png" id="logo"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -55,9 +82,9 @@
               <li class="nav-item custom">
                 <a class="nav-link" href="#" style="color: #595959;">GIFTS</a>
               </li>
-              <li id="line"></li>
+              <div id="line"></div>
               <li class="nav-item">
-                <a id="sidebarCollapse" class="nav-link" href="#" style="padding-right: 0; color: #595959;">
+                <a class="sidebarCollapse nav-link" href="#" style="padding-right: 0; color: #595959;">
                   <span class="badge badge-primary hidden">1</span>
                   <img src="assets/cart_icon.png" id="cart"/>
                   <span>CART</span>
@@ -153,11 +180,36 @@
     <div class="footer">
       <table class="invisiTable">
         <tr>
-          <td style="margin-right: 177px; padding-top: 21px; width: 378px;">
+          <td style="padding-top: 21px; width: 378px;">
             <h3 style="font-size: 16px; padding-bottom: 19px;">We are committed to serving the freshest, most delightful treats. </h3>
-            <img></img>
+            <img src="assets/facebook_icon.png" class="mediaImg"/>
+            <img src="assets/instagram_icon.png" class="mediaImg"/>
+            <img src="assets/twitter_icon.png" class="mediaImg"/>
+            <p style="font-size: 12px; font-weight: 600; color: #919EAB;">© 2019 MACARONS</p>
           </td>
-          <td>
+          <td style="padding-left: 177px; ">
+            <span class="footerLinks" style="width: 67px;">
+              <span style="color: #3B8873; font-weight: 700; cursor: default;">
+                Company
+              </span>
+              <br>
+              About
+              <br>
+              Locations
+              <br>
+              Contact us
+            </span>
+          </td>
+          <td style="padding-left: 128px; padding-right: 151px;">
+            <span class="footerLinks" style="width: 83px;">
+              <span style="color: #3B8873; font-weight: 700; cursor: default;">
+                Orders
+              </span>
+              <br>
+              Order Tracker
+              <br>
+              Delivery FAQs
+            </span>
           </td>
         </tr>
       </table>

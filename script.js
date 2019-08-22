@@ -2,23 +2,37 @@ let itemNum = 0;
 let indexNum = 0;
 let costs = [55, 3.75, 3.75];
 let total = 0;
+let activeSidebar = [];
 
 $(document).ready(function () {
   $('#dismiss, .overlay').on('click', function () {
     // hide sidebar
-    $('#sidebar').removeClass('active');
-    $('#sidebar2').removeClass('active');
+    $('#' + activeSidebar[activeSidebar.length-1]).removeClass('active');
+    activeSidebar.pop();
     // hide overlay
-    $('.overlay').removeClass('active');
+    if(activeSidebar.length == 0) {
+      $('.overlay').removeClass('active');
+    }
   });
-  $('#sidebarCollapse').on('click', function () {
+  $('.sidebarCollapse').on('click', function () {
     if(itemNum > 0) {
       // open sidebar
       $('#sidebar').addClass('active');
+      activeSidebar.push("sidebar");
     } else {
       //open sidebar that says you have nothing in cart
       $("#sidebar2").addClass('active');
+      activeSidebar.push("sidebar2");
     }
+    // fade in the overlay
+    $('.overlay').addClass('active');
+    $('.collapse.in').toggleClass('in');
+    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+  });
+  $('.navbar-toggler').on('click', function () {
+    // open sidebar
+    $('#nav-sidebar').addClass('active');
+    activeSidebar.push("nav-sidebar");
     // fade in the overlay
     $('.overlay').addClass('active');
     $('.collapse.in').toggleClass('in');
@@ -36,10 +50,6 @@ $("#readMore").on('click', () => {
 });
 
 $("#add1").on('click', () => {
-  itemNum++;
-  indexNum++;
-  $(".badge-primary").removeClass("hidden");
-  $(".badge-primary").html(itemNum);
   addToCart("Custom Gift Box", "Assorted Flavors", 0, "custom gift box.png");
 
   $("#add1").html("<img src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/80/white-heavy-check-mark_2705.png' style='width: 20px;'/>&nbsp&nbspAdded to Cart");
@@ -51,10 +61,6 @@ $("#add1").on('click', () => {
 })
 
 $("#add2").on('click', () => {
-  itemNum++;
-  indexNum++;
-  $(".badge-primary").removeClass("hidden");
-  $(".badge-primary").html(itemNum);
   addToCart("Vanilla Earl Grey Macaron", "1 piece", 1, "vanilla.png");
 
   $("#add2").html("<img src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/80/white-heavy-check-mark_2705.png' style='width: 20px;'/>&nbsp&nbspAdded to Cart");
@@ -66,10 +72,6 @@ $("#add2").on('click', () => {
 })
 
 $("#add3").on('click', () => {
-  itemNum++;
-  indexNum++;
-  $(".badge-primary").removeClass("hidden");
-  $(".badge-primary").html(itemNum);
   addToCart("Rose Macaron", "1 piece", 2, "rose.png");
 
   $("#add3").html("<img src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/80/white-heavy-check-mark_2705.png' style='width: 20px;'/>&nbsp&nbspAdded to Cart");
@@ -81,6 +83,10 @@ $("#add3").on('click', () => {
 })
 
 const addToCart = (name, desc, num, img) => {
+  itemNum++;
+  indexNum++;
+  $(".badge-primary").removeClass("hidden");
+  $(".badge-primary").html(itemNum);
   let dist = 19;
   if(num==1) {
     dist = 38
@@ -100,9 +106,11 @@ const remove = (index, num) => {
   if(itemNum==0) {
     // hide sidebar
     $('#sidebar').removeClass('active');
-    $('#sidebar2').removeClass('active');
+    activeSidebar.pop();
     // hide overlay
-    $('.overlay').removeClass('active');
+    if(activeSidebar.length == 0) {
+      $('.overlay').removeClass('active');
+    }
     // hide badge
     $(".badge-primary").addClass("hidden");
   }
